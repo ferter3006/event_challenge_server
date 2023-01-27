@@ -16,14 +16,11 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::get('/pene', function(){
-    dd("hola");
-});
-
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::post('/s3tup', [UserController::class, 'setup']);
 
 Route::post('/login', [UserController::class, 'loginUser']);
 Route::post('/create_user', [UserController::class, 'createUser']);
