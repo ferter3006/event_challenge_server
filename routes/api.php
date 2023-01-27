@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/pene', function(){
-    dd("hola");
+    return("hola");
 });
 
 
