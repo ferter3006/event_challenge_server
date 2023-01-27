@@ -5,16 +5,16 @@ namespace App\Http\Controllers;
 use App\Models\Event;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    public function test(){
-        $x = Event::find(1);
-        dd($x);
-
-        echo "hola ferter)";
+    public function setup(){
+        //Artisan::call("php artisan ferter");
+        Artisan::call('migrate');
+        Artisan::call('db:seed');
     }
     public function createUser(Request $request)
     {
